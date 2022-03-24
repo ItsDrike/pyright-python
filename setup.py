@@ -8,7 +8,7 @@ with open('README.md', 'r') as f:
     readme = f.read()
 
 version = ''
-with open('pyright/__init__.py') as f:
+with open('pyright/_version.py') as f:
     match = re.search(r'^__version__\s*=\s*[\'"]([^\'"]*)[\'"]', f.read(), re.MULTILINE)
     if not match:
         raise RuntimeError('version is not set')
@@ -41,7 +41,7 @@ setup(
     long_description=readme,
     long_description_content_type='text/markdown',
     packages=['pyright'],
-    python_requires='>=3',
+    python_requires='>=3.7',
     package_data={'': ['py.typed']},
     include_package_data=True,
     zip_safe=False,
@@ -62,13 +62,13 @@ setup(
         'Tracker': 'https://github.com/RobertCraigie/pyright-python/issues',
     },
     classifiers=[
-        'Development Status :: 1 - Planning',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Typing :: Typed',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3.9',
+        'Programming Language :: Python :: 3.10',
     ],
 )
